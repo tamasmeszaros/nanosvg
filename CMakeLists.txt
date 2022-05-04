@@ -10,7 +10,7 @@ add_library(nanosvg ${CMAKE_CURRENT_BINARY_DIR}/nanosvg.c)
 
 find_library(MATH_LIBRARY m) # Business as usual
 if(MATH_LIBRARY)
-    target_link_libraries(nanosvg PUBLIC ${MATH_LIBRARY})
+    target_link_libraries(nanosvg PRIVATE ${MATH_LIBRARY})
 endif()
 
 target_include_directories(nanosvg PUBLIC $<INSTALL_INTERFACE:include/nanosvg>)
